@@ -19,7 +19,7 @@
           <van-cell
             :title="item.name"
             :value="item.grow_place"
-            label="描述信息"
+            :label="`售价：${item.sale_price}元/斤   剩余数量：${item.medicine_number}斤 `"
           /> </van-cell-group
       ></router-link>
     </div>
