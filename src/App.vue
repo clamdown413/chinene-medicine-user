@@ -1,16 +1,14 @@
 <template>
   <div class="container">
-    <header class="header">header</header>
-    <div class="content">content</div>
-    <footer class="footer">footer</footer>
+    <router-view></router-view>
+    <footer class="footer">
+      <FootComponents />
+    </footer>
   </div>
-  <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
   <div class="landscape-tip">请将屏幕竖向浏览</div>
 </template>
-<script lang="ts">
-import { defineComponent } from "vue";
-
-export default defineComponent({});
+<script lang="ts" setup>
+import FootComponents from "./components/FootComponents.vue";
 </script>
 
 <style lang="scss">
@@ -21,20 +19,42 @@ export default defineComponent({});
   .header {
     // height: 44px;
     height: 0.44rem;
-    background-color: #f66;
+    background-color: #efefef;
+    text-align: center;
+    line-height: 45px;
   }
   .content {
     flex: 1;
     overflow: auto;
   }
   .footer {
-    // height: 50px;
     height: 0.5rem;
     background-color: #efefef;
+    user-select: none;
+
+    ul {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      li {
+        flex: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        span {
+          font-size: 0.2rem;
+        }
+
+        p {
+          font-size: 0.12rem;
+        }
+      }
+    }
   }
 }
 .landscape-tip {
-  // ++++++++++++++++++++++++++++++++++++++++
   position: fixed;
   top: 0;
   right: 0;
@@ -47,7 +67,6 @@ export default defineComponent({});
   align-items: center;
 }
 
-// ++++++++++++++++++++++++++++++++++++++++
 @media only screen and (orientation: landscape) {
   // 横屏
   .landscape-tip {
