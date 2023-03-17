@@ -1,0 +1,31 @@
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  text-decoration: none;
+}
+
+html,
+body,
+#app {
+  height: 100%;
+}
+
+html {
+  // font-size: 100px; // 1rem = 100px
+  // iphone4  100 / 320 * 100  31.25vw
+  font-size: 26.666666667vw; // iphone6为设计稿时 1rem = 100px  100 / 375 * 100
+}
+
+body {
+  font-size: 12px; // 根据设计稿的最小的字体大小为基准
+}
+
+// ++++++++++++++++++++++++++++++++
+@media only screen and (orientation: landscape) {
+
+  // 横屏
+  html {
+    font-size: 100px;
+  }
+}
