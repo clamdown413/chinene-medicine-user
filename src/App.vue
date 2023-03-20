@@ -1,14 +1,11 @@
 <template>
   <div class="container">
     <router-view></router-view>
-    <footer class="footer">
-      <FootComponents />
-    </footer>
+    <router-view name="footer"></router-view>
   </div>
   <div class="landscape-tip">请将屏幕竖向浏览</div>
 </template>
 <script lang="ts" setup>
-import FootComponents from "./components/FootComponents.vue";
 </script>
 
 <style lang="scss">

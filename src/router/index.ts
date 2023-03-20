@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import type { RouteRecordRaw, Router } from 'vue-router'
 
-
-
+import FooterView from '../components/FootComponents.vue'
 import HomeView from '../views/Home/Index.vue'
 import SearchView from '../views/Search/Index.vue'
 import SettingView from '../views/Setting/Index.vue'
 import UploadView from '../views/Upload/Index.vue'
-
+import LoginView from '../views/Login/Index.vue'
+import RegisterView from '../views/Register/Index.vue'
 import DetailView from '../views/Detail/Index.vue'
 const routes: RouteRecordRaw[] = [
 
@@ -18,26 +18,55 @@ const routes: RouteRecordRaw[] = [
     {
         path: '/home',
         name: 'home',
-        component: HomeView
+        components: {
+            default: HomeView,
+            footer: FooterView
+        }
     }, {
         path: '/search',
         name: 'search',
-        component: SearchView,
+        components: {
+            default: SearchView,
+            footer: FooterView
+        }
     },
     {
         path: '/detail:id',
         name: "detail",
-        component: DetailView
+        component: { default: DetailView }
     },
     {
         path: '/setting',
         name: 'setting',
-        component: SettingView
+        components: {
+            default: SettingView,
+            footer: FooterView
+
+        }
     }, {
         path: '/upload',
         name: 'upload',
-        component: UploadView
-    }
+        components: {
+            default: UploadView,
+            footer: FooterView
+        }
+    },
+    {
+        path: '/login',
+        name: 'login',
+        components: {
+            default: LoginView,
+            footer: FooterView
+        }
+    }, {
+        path: '/register',
+        name: 'register',
+        components: {
+            default: RegisterView,
+            footer: FooterView
+        }
+    },
+
 ]
 
 
