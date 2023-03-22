@@ -1,7 +1,6 @@
 <template>
   <header class="header">药材详情</header>
   <div class="content">
-    <el-button type="danger">Danger</el-button>
     <el-descriptions
       :title="datasource.name"
       direction="vertical"
@@ -32,16 +31,25 @@
         </li>
       </el-descriptions-item>
     </el-descriptions>
+    <el-button
+      type="danger"
+      @click="
+        () => {
+          router.back();
+        }
+      "
+      >返回</el-button
+    >
   </div>
 </template>
   
   <script  lang="ts" setup>
 import { AxiosResponse } from "axios";
-import { computed, ref, watch } from "vue";
+import { ref, watch } from "vue";
 import { useRouter, useRoute } from "vue-router";
 import { getMedicineInfoById, selectOperateById } from "../../api/medicine";
-const router = useRouter();
 const route = useRoute();
+const router = useRouter();
 const datasource = ref();
 const id = ref(route.params.id);
 const operate_list = ref<any>([]);
@@ -52,24 +60,17 @@ let getOperateData = (operate_ids: any) => {
   });
   return data;
 };
-
-const size = ref("");
-
 const operate_id = ref([]);
 const operate_mouth = ref([]);
 getMedicineInfoById({ id: Number(id.value) }).then((res) => {
-  console.log(res.data.data);
-
   datasource.value = res.data.data[0];
   operate_id.value = JSON.parse(res.data.data[0].operate_id);
   operate_mouth.value = JSON.parse(res.data.data[0].operate_mouth);
-  console.log(operate_mouth);
 });
 
 watch(operate_id, (operate_ids) => {
   Promise.all(getOperateData(operate_ids)).then((values) => {
     operate_list.value = values;
-    console.log(operate_list.value[1].data.data[0].operate_detail);
   });
 });
 </script>

@@ -24,6 +24,7 @@
     flex: 1;
     overflow: auto;
   }
+
   .footer {
     height: 0.5rem;
     background-color: #efefef;

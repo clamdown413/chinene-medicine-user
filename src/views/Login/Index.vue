@@ -35,22 +35,30 @@ import { ElMessage } from "element-plus";
 import { ref } from "vue";
 import { userLogin } from "../../api/user";
 import { useRouter, useRoute } from "vue-router";
-const username = ref("");
-const password = ref("");
+import store2 from "store2";
+const username = ref("user1");
+const password = ref("user1");
 const checkCode = ref("");
 const router = useRouter();
+interface store {
+  loginState: number;
+}
+// const store = useStore();
 const login = () => {
   userLogin({ username: username.value, password: password.value }).then(
     (res) => {
-      console.log(res);
-
       if (res.data.code === 201) {
         ElMessage("账号或用户名错误");
         return 0;
       }
       if (res.data.code === 200) {
-        console.log(1);
+        console.log(res.data.data);
 
+        store2.set("user", {
+          username: username.value,
+          level: res.data.data.level,
+          token: res.data.data.token,
+        });
         router.push({
           name: "home",
         });

@@ -80,3 +80,10 @@ export function selectOperateById(params: { operate_id: number }) {
     })
 }
 
+export function insertMedicineInfo(params: { name: string, medicine_number: number, last_data: string, buy_price: number, sale_price: number, grow_place: string, operate_mouth: string, operate_id: string }) {
+    return request({
+        url: 'insertTest',
+        method: 'POST',
+        data: params
+    })
+}

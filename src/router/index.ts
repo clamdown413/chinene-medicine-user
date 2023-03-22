@@ -33,7 +33,7 @@ const routes: RouteRecordRaw[] = [
     {
         path: '/detail:id',
         name: "detail",
-        component: { default: DetailView }
+        components: { default: DetailView }
     },
     {
         path: '/setting',

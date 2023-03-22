@@ -1,5 +1,5 @@
 <template>
-  <header class="header">home header</header>
+  <header class="header">个人中心</header>
   <div class="content">home content</div>
 </template>
 
