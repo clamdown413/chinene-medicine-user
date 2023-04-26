@@ -13,6 +13,7 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+
   .header {
     // height: 44px;
     height: 0.44rem;
@@ -20,9 +21,13 @@
     text-align: center;
     line-height: 45px;
   }
+
   .content {
     flex: 1;
     overflow: auto;
+    padding: 15px;
+    position: relative;
+
   }
 
   .footer {
@@ -34,6 +39,7 @@
       width: 100%;
       height: 100%;
       display: flex;
+
       li {
         flex: 1;
         height: 100%;
@@ -41,6 +47,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
         span {
           font-size: 0.2rem;
         }
@@ -52,6 +59,7 @@
     }
   }
 }
+
 .landscape-tip {
   position: fixed;
   top: 0;
@@ -66,6 +74,7 @@
 }
 
 @media only screen and (orientation: landscape) {
+
   // 横屏
   .landscape-tip {
     display: flex;

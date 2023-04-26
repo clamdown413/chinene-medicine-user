@@ -57,6 +57,5 @@ const onCancel = () => {
 .searchInput {
   flex: 1;
 }
-.searchButton {
-}
+
 </style>

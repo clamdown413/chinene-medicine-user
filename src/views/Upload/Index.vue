@@ -19,205 +19,59 @@
       </div>
 
       <el-form-item label="交货时间">
-        <el-date-picker
-          v-model="medicine_data.last_data"
-          type="date"
-          placeholder="选择日期"
-          style="width: 100%"
-          value-format="YYYY-MM-DD"
-        ></el-date-picker>
+        <el-date-picker v-model="medicine_data.last_data" type="date" placeholder="选择日期" style="width: 100%"
+          value-format="YYYY-MM-DD"></el-date-picker>
       </el-form-item>
       <el-form-item label="产地">
         <el-select v-model="medicine_data.grow_place" placeholder="选择产地">
-          <el-option
-            v-for="item in options"
-            :key="item.value"
-            :label="item.label"
-            :value="item.value"
-          />
+          <el-option v-for="item in options" :key="item.value" :label="item.label" :value="item.value" />
         </el-select>
       </el-form-item>
       <el-form-item label="选择操作">
         <div class="operate">
           <div class="item">
-            <el-form-item
-              ><el-select
-                v-model="medicine_data.opreate_mouth[0]"
-                placeholder="月份"
-                class="select-month"
-              >
-                <el-option
-                  v-for="item in month"
-                  :key="item"
-                  :label="item.label"
-                  :value="item.value"
-                >
-                </el-option></el-select
-              ><el-select
-                disabled
-                placeholder="选择操作"
-                v-model="medicine_data.operate_id[0]"
-                class="select-operate"
-                @change="change"
-              >
-                <el-option
-                  v-for="item in operate"
-                  :key="item"
-                  :label="item.label"
-                  :value="item.value"
-                >
-                </el-option> </el-select
-              ><el-select
-                v-model="medicine_data.opreate_mouth[1]"
-                placeholder="月份"
-                class="select-month"
-              >
-                <el-option
-                  v-for="item in month"
-                  :key="item"
-                  :label="item.label"
-                  :value="item.value"
-                >
-                </el-option></el-select
-              ><el-select
-                placeholder="选择操作"
-                v-model="medicine_data.operate_id[1]"
-                class="select-operate"
-                @change="change"
-              >
-                <el-option
-                  v-for="item in operate"
-                  :key="item"
-                  :label="item.label"
-                  :value="item.value"
-                >
-                </el-option> </el-select
-              ><el-select
-                v-model="medicine_data.opreate_mouth[2]"
-                placeholder="月份"
-                class="select-month"
-              >
-                <el-option
-                  v-for="item in month"
-                  :key="item"
-                  :label="item.label"
-                  :value="item.value"
-                >
-                </el-option></el-select
-              ><el-select
-                placeholder="选择操作"
-                v-model="medicine_data.operate_id[2]"
-                class="select-operate"
-                @change="change"
-              >
-                <el-option
-                  v-for="item in operate"
-                  :key="item"
-                  :label="item.label"
-                  :value="item.value"
-                >
-                </el-option> </el-select
-              ><el-select
-                v-model="medicine_data.opreate_mouth[3]"
-                placeholder="月份"
-                class="select-month"
-              >
-                <el-option
-                  v-for="item in month"
-                  :key="item"
-                  :label="item.label"
-                  :value="item.value"
-                >
-                </el-option></el-select
-              ><el-select
-                placeholder="选择操作"
-                v-model="medicine_data.operate_id[3]"
-                class="select-operate"
-                @change="change"
-              >
-                <el-option
-                  v-for="item in operate"
-                  :key="item"
-                  :label="item.label"
-                  :value="item.value"
-                >
-                </el-option> </el-select
-              ><el-select
-                v-model="medicine_data.opreate_mouth[4]"
-                placeholder="月份"
-                class="select-month"
-              >
-                <el-option
-                  v-for="item in month"
-                  :key="item"
-                  :label="item.label"
-                  :value="item.value"
-                >
-                </el-option></el-select
-              ><el-select
-                placeholder="选择操作"
-                v-model="medicine_data.operate_id[4]"
-                class="select-operate"
-                @change="change"
-              >
-                <el-option
-                  v-for="item in operate"
-                  :key="item"
-                  :label="item.label"
-                  :value="item.value"
-                >
+            <el-form-item><el-select v-model="medicine_data.opreate_mouth[0]" placeholder="月份" class="select-month">
+                <el-option v-for="item in month" :key="item" :label="item.label" :value="item.value">
+                </el-option></el-select><el-select disabled placeholder="选择操作" v-model="medicine_data.operate_id[0]"
+                class="select-operate" @change="change">
+                <el-option v-for="item in operate" :key="item" :label="item.label" :value="item.value">
+                </el-option> </el-select><el-select v-model="medicine_data.opreate_mouth[1]" placeholder="月份"
+                class="select-month">
+                <el-option v-for="item in month" :key="item" :label="item.label" :value="item.value">
+                </el-option></el-select><el-select placeholder="选择操作" v-model="medicine_data.operate_id[1]"
+                class="select-operate" @change="change">
+                <el-option v-for="item in operate" :key="item" :label="item.label" :value="item.value">
+                </el-option> </el-select><el-select v-model="medicine_data.opreate_mouth[2]" placeholder="月份"
+                class="select-month">
+                <el-option v-for="item in month" :key="item" :label="item.label" :value="item.value">
+                </el-option></el-select><el-select placeholder="选择操作" v-model="medicine_data.operate_id[2]"
+                class="select-operate" @change="change">
+                <el-option v-for="item in operate" :key="item" :label="item.label" :value="item.value">
+                </el-option> </el-select><el-select v-model="medicine_data.opreate_mouth[3]" placeholder="月份"
+                class="select-month">
+                <el-option v-for="item in month" :key="item" :label="item.label" :value="item.value">
+                </el-option></el-select><el-select placeholder="选择操作" v-model="medicine_data.operate_id[3]"
+                class="select-operate" @change="change">
+                <el-option v-for="item in operate" :key="item" :label="item.label" :value="item.value">
+                </el-option> </el-select><el-select v-model="medicine_data.opreate_mouth[4]" placeholder="月份"
+                class="select-month">
+                <el-option v-for="item in month" :key="item" :label="item.label" :value="item.value">
+                </el-option></el-select><el-select placeholder="选择操作" v-model="medicine_data.operate_id[4]"
+                class="select-operate" @change="change">
+                <el-option v-for="item in operate" :key="item" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
-              <el-select
-                v-model="medicine_data.opreate_mouth[5]"
-                placeholder="月份"
-                class="select-month"
-              >
-                <el-option
-                  v-for="item in month"
-                  :key="item"
-                  :label="item.label"
-                  :value="item.value"
-                >
-                </el-option></el-select
-              ><el-select
-                placeholder="选择操作"
-                v-model="medicine_data.operate_id[5]"
-                class="select-operate"
-                @change="change"
-              >
-                <el-option
-                  v-for="item in operate"
-                  :key="item"
-                  :label="item.label"
-                  :value="item.value"
-                >
-                </el-option> </el-select
-              ><el-select
-                v-model="medicine_data.opreate_mouth[6]"
-                placeholder="月份"
-                class="select-month"
-              >
-                <el-option
-                  v-for="item in month"
-                  :key="item"
-                  :label="item.label"
-                  :value="item.value"
-                >
-                </el-option></el-select
-              ><el-select
-                disabled
-                placeholder="选择操作"
-                v-model="medicine_data.operate_id[6]"
-                class="select-operate"
-                @change="change"
-              >
-                <el-option
-                  v-for="item in operate"
-                  :key="item"
-                  :label="item.label"
-                  :value="item.value"
-                >
+              <el-select v-model="medicine_data.opreate_mouth[5]" placeholder="月份" class="select-month">
+                <el-option v-for="item in month" :key="item" :label="item.label" :value="item.value">
+                </el-option></el-select><el-select placeholder="选择操作" v-model="medicine_data.operate_id[5]"
+                class="select-operate" @change="change">
+                <el-option v-for="item in operate" :key="item" :label="item.label" :value="item.value">
+                </el-option> </el-select><el-select v-model="medicine_data.opreate_mouth[6]" placeholder="月份"
+                class="select-month">
+                <el-option v-for="item in month" :key="item" :label="item.label" :value="item.value">
+                </el-option></el-select><el-select disabled placeholder="选择操作" v-model="medicine_data.operate_id[6]"
+                class="select-operate" @change="change">
+                <el-option v-for="item in operate" :key="item" :label="item.label" :value="item.value">
                 </el-option>
               </el-select>
             </el-form-item>
@@ -230,6 +84,8 @@
         <el-button>取消</el-button>
       </el-form-item>
     </el-form>
+    <div class="upload-model" v-show="model_show">此功能仅供生产者使用！</div>
+
   </div>
 </template>
   
@@ -238,6 +94,9 @@ import { reactive } from "vue";
 import { selectAllOperate } from "../../api/operate";
 import { insertMedicineInfo } from "../../api/medicine";
 import { ElMessage } from "element-plus";
+import store2 from 'store2'
+
+const model_show = (store2.get("user").level) == '1'
 let month = (function () {
   let arr = [];
   for (let i = 1; i <= 12; i++) {
@@ -365,29 +224,48 @@ const onSubmit = () => {
 };
 </script>
   
-  <style lang="scss" scoped>
+<style lang="scss" scoped>
 .content {
   margin-top: 15px;
 }
+
 .el-select {
   width: 100%;
 }
+
 .operate {
   width: 100%;
   border: 1px solid gray;
+
   .item {
     display: flex;
     flex-flow: between;
+
     .select-month {
       flex: 2;
       width: 20%;
     }
+
     .select-operate {
       width: 70%;
     }
   }
 }
+
 .el-form {
   padding-right: 30px;
+}
+
+.upload-model {
+  font-size: 0.25rem;
+  display: flex;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  justify-content: center;
+  align-items: center;
 }
 </style>

@@ -27,6 +27,9 @@
         >登录</van-button
       >
     </div>
+    <router-link  to="register" style="margin-left: 5px;margin-top: 10px;">
+       没有账号？现在注册一个！
+      </router-link>
   </div>
 </template>
   
@@ -58,6 +61,7 @@ const login = () => {
           username: username.value,
           level: res.data.data.level,
           token: res.data.data.token,
+          nickname:res.data.data.nickname
         });
         router.push({
           name: "home",

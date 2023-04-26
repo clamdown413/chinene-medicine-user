@@ -8,7 +8,7 @@ export function userLogin(params: { username: string, password: string }) {
     })
 }
 
-export function userRegister(params: { username: string, password: string }) {
+export function userRegister(params: { username: string, password: string,nickname:string,level:string }) {
     return request({
         url: 'register',
         method: 'POST',

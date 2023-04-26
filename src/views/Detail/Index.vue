@@ -10,13 +10,13 @@
     >
       <el-descriptions-item label="进价/斤">{{
         datasource.buy_price
-      }}</el-descriptions-item>
+      }}元</el-descriptions-item>
       <el-descriptions-item label="售价/斤">{{
         datasource.sale_price
-      }}</el-descriptions-item>
+      }}元</el-descriptions-item>
       <el-descriptions-item label="剩余数量/斤">{{
         datasource.medicine_number
-      }}</el-descriptions-item>
+      }}元</el-descriptions-item>
       <el-descriptions-item label="发源地" :span="2">{{
         datasource.grow_place
       }}</el-descriptions-item>
